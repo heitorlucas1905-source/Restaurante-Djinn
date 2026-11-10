@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Restaurante Djinn</title>
+<link href="https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem("tema");document.documentElement.dataset.theme=(t==="dark")?"dark":"light"}catch(e){document.documentElement.dataset.theme="light"}</script>
+</head>
+<body>
+<!-- Eai susu, leo, thiago e o gordo(Arthur) -->
+ <!-- Separei o codigo para a melhor vizualicao para voces, abracos! -->
+
+<!-- CABECALHO  -->
+<header>
+  <a class="logo" data-page="home"><img src="img/logo.png" alt="Djinn"></a>
+  <nav>
+    <a data-page="home">Menu</a>
+    <a data-page="login">Login</a>
+    <a data-page="produtos">Produtos</a>
+    <a data-page="pedidos">Pedidos feitos</a>
+    <a data-page="cadastro">Cadastro</a>
+  </nav>
+  <div class="icones">
+    <button id="tema" class="tema" type="button" aria-label="Alternar entre modo claro e escuro" title="Modo escuro">
+      <svg class="lua" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <svg class="sol" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+    <a data-page="carrinho" class="carrinho-icone"><img src="img/carrinho.png" alt="Carrinho"><b id="qtd">0</b></a>
+    <a id="icone-usuario"><img src="img/usuario.png" alt="Usuário"></a>
+  </div>
+</header>
+
+<main>
+
+<!--  MENU (INICIO) -->
+<section id="home" class="pagina">
+  <div class="hero padrao-verde">
+    <div>
+      <h1>Sabores ancestrais, aromas inesquecíveis: uma viagem à Arábia em cada pedaço</h1>
+      <button class="btn" data-page="produtos">Ver cardápio e pedir</button>
+    </div>
+    <img src="img/hero.png" alt="Pratos árabes">
+  </div>
+
+  <div class="sobre">
+    <p>Nas dunas do deserto, um viajante encontrou uma lâmpada antiga, mas o Djinn que dela surgiu não ofereceu ouro: ofereceu o dom dos sabores, revelando que a verdadeira magia está na arte da hospitalidade e em confortar a alma através da comida.<br>Inspirado por essa lenda, o Restaurante Djinn transforma cada prato num ritual mágico. Entre aromas de cardamomo e pão fresco, trazemos a tradição do Oriente Médio para a sua mesa, onde o seu desejo é o nosso banquete.</p>
+    <img src="img/fachada.png" alt="Fachada do Djinn">
+  </div>
+
+  <div class="destaques padrao-ouro">
+    <h2>Destaques do nosso cardápio</h2>
+    <div class="cards3">
+      <div class="destaque"><div class="destaque-info"><span>Prato principal</span><h3>Kafta grelhada</h3><p>R$ 42,00</p><button class="btn" data-add="1">Adicionar</button></div></div>
+      <div class="destaque"><div class="destaque-info"><span>Entrada</span><h3>Homus com pão sírio</h3><p>R$ 24,00</p><button class="btn" data-add="2">Adicionar</button></div></div>
+      <div class="destaque"><div class="destaque-info"><span>Esfiha</span><h3>Esfiha de carne</h3><p>R$ 9,00</p><button class="btn" data-add="3">Adicionar</button></div></div>
+    </div>
+  </div>
+
+  <div class="avaliacoes padrao-verde">
+    <h2 class="titulo-linha ouro">Avaliações de clientes</h2>
+    <p class="ouro">Veja como clientes que já pediram avaliam sabor, entrega e atendimento.</p>
+    <div class="cards3">
+      <div class="avaliacao"><small>Cliente da avaliação</small><b>David Turek</b><span class="estrelas">★★★★★</span><p>“Os temperos estavam equilibrados e os pratos chegaram deliciosos!”</p></div>
+      <div class="avaliacao"><small>Cliente da avaliação</small><b>Ione De Assis</b><span class="estrelas">★★★★★</span><p>“O pedido chegou no prazo, bem embalado e com tudo certinho.”</p></div>
+      <div class="avaliacao"><small>Cliente da avaliação</small><b>Vera Regina</b><span class="estrelas">★★★★★</span><p>“Atendimento atencioso e rápido. Foi uma ótima experiência!”</p></div>
+    </div>
+  </div>
+
+  <div class="visite">
+    <h2 class="titulo-linha">Visitem-nos</h2>
+    <p>Venha viver a magia do Restaurante Djinn em pessoa. Nossa equipe estará pronta para recebê-lo com toda a hospitalidade do Oriente.</p>
+    <img src="img/pin.png" alt="" class="pin">
+    <p>R. Matias Cardoso, 345</p>
+    <p class="ouro-escuro">Santo Agostinho, Belo Horizonte</p>
+  </div>
+</section>
+
+<!--  LOGIN  -->
+<section id="login" class="pagina" hidden>
+  <div class="faixa padrao-verde"><h1>Login</h1><p>Entre para fazer seu pedido e acompanhar seus sabores favoritos.</p></div>
+  <div class="duas-colunas">
+    <form id="form-login">
+      <h3 class="subtitulo">Bem-vindo de volta</h3>
+      <label>E-mail</label><input id="login-email" placeholder="Digite seu e-mail" required>
+      <label>Senha</label><input id="login-senha" type="password" placeholder="Digite sua senha" required>
+      <div class="linha-entre"><label class="check"><input type="checkbox"> Lembrar de mim</label><a class="link">Esqueci minha senha</a></div>
+      <button class="btn largo">Entrar</button>
+      <p id="login-msg" class="erro"></p>
+      <p class="centro">Ainda não tem uma conta?</p>
+      <button type="button" class="btn-claro largo" data-page="cadastro">Cadastre-se</button>
+    </form>
+    <figure><img src="img/fachada.png" alt="Fachada do Djinn"><figcaption>O seu desejo é o nosso banquete.</figcaption></figure>
+  </div>
+</section>
+
+<!--  CADASTRO  -->
+<section id="cadastro" class="pagina" hidden>
+  <div class="faixa padrao-verde"><h1>Cadastro</h1><p>Crie sua conta e leve a tradição do Oriente Médio para a sua mesa.</p></div>
+  <form id="form-cadastro" class="formulario">
+    <p class="pequeno">Os campos com * são obrigatórios.</p>
+    <h3 class="subtitulo">Dados pessoais</h3>
+    <div class="grade2">
+      <div class="full"><label>Nome completo *</label><input id="cad-nome" maxlength="100" autocomplete="name" placeholder="Digite seu nome completo" required></div>
+      <div><label>E-mail *</label><input type="email" id="cad-email" maxlength="120" autocomplete="email" placeholder="seunome@email.com" required></div>
+      <div><label>Telefone *</label><input id="cad-telefone" maxlength="15" inputmode="numeric" autocomplete="tel" placeholder="(31) 99999-9999" required></div>
+      <div><label>CPF *</label><input id="cad-cpf" maxlength="14" inputmode="numeric" placeholder="000.000.000-00" required></div>
+      <div><label>Data de nascimento</label><input id="cad-nasc" maxlength="10" inputmode="numeric" placeholder="DD/MM/AAAA"></div>
+    </div>
+    <h3 class="subtitulo">Endereço de entrega</h3>
+    <div class="grade2">
+      <div><label>CEP *</label><input id="cad-cep" maxlength="9" inputmode="numeric" autocomplete="postal-code" placeholder="00000-000" required></div>
+      <div><label>Bairro *</label><input id="cad-bairro" maxlength="80" placeholder="Digite seu bairro" required></div>
+      <div><label>Rua / Avenida *</label><input id="cad-rua" maxlength="120" placeholder="Digite seu endereço" required></div>
+      <div><label>Número *</label><input id="cad-numero" maxlength="6" inputmode="numeric" pattern="[0-9]*" placeholder="Número da residência" required></div>
+      <div><label>Complemento</label><input id="cad-comp" maxlength="80" placeholder="Apartamento, bloco, casa"></div>
+      <div><label>Ponto de referência</label><input id="cad-ref" maxlength="100" placeholder="Próximo a..."></div>
+      <div><label>Cidade *</label><input id="cad-cidade" maxlength="80" value="Belo Horizonte"></div>
+      <div><label>Estado *</label><select><option>Minas Gerais — MG</option></select></div>
+    </div>
+    <h3 class="subtitulo">Senha de acesso</h3>
+    <div class="grade2">
+      <div><label>Senha *</label><input type="password" id="cad-senha" minlength="8" maxlength="64" placeholder="Crie uma senha" required></div>
+      <div><label>Confirmar senha *</label><input type="password" id="cad-senha2" minlength="8" maxlength="64" placeholder="Repita sua senha" required></div>
+    </div>
+    <p class="pequeno">Use pelo menos 8 caracteres, incluindo letras e números.</p>
+    <label class="check"><input id="cad-termos" type="checkbox" required> Li e aceito os termos de uso e a Política de privacidade. *</label>
+    <label class="check"><input id="cad-novidades" type="checkbox"> Quero receber novidades e ofertas do Restaurante Djinn.</label>
+    <div class="linha-entre"><span class="pequeno">Já tem uma conta? Faça <a class="link" data-page="login">Login</a>.</span><button class="btn">Criar conta</button></div>
+  </form>
+</section>
+
+<!--  PRODUTOS  -->
+<section id="produtos" class="pagina" hidden>
+  <div class="faixa padrao-verde"><h1>Produtos</h1><p>Sabores ancestrais, preparados para o seu pedido.</p></div>
+  <div class="intro">
+    <div><h2 class="subtitulo">Uma viagem à Arábia em cada pedaço</h2>
+    <p>Escolha entre entradas, esfihas e pratos tradicionais. Todos preparados com a hospitalidade do Restaurante Djinn.</p></div>
+    <img src="img/produtos.png" alt="Pratos árabes">
+  </div>
+  <div class="cardapio padrao-ouro">
+    <h2>Nosso cardápio</h2>
+    <label class="claro">Buscar</label>
+    <div class="busca"><input id="busca-prod" maxlength="80" placeholder="Digite o nome do prato ou ingrediente"><button class="btn-claro" id="btn-busca-prod">Buscar</button></div>
+    <div class="chips" id="chips-prod">
+      <button class="chip ativo" data-cat="">Todos</button><button class="chip" data-cat="Entradas">Entradas</button><button class="chip" data-cat="Esfihas">Esfihas</button><button class="chip" data-cat="Pratos principais">Pratos principais</button><button class="chip" data-cat="Sobremesas">Sobremesas</button><button class="chip" data-cat="Bebidas">Bebidas</button>
+    </div>
+    <p class="claro pequeno"><span id="total-prod">12</span> produtos · Ordenar por: Destaques</p>
+    <div class="cards3" id="lista-prod"></div>
+    <button class="btn-claro centrado" data-page="carrinho">Ver carrinho</button>
+  </div>
+</section>
+
+<!--  PEDIDOS FEITOS  -->
+<section id="pedidos" class="pagina" hidden>
+  <div class="faixa padrao-verde"><h1>Pedidos feitos</h1><p>Acompanhe seu pedido e relembre os sabores que já passaram pela sua mesa.</p></div>
+  <div class="miolo" id="area-pedidos"></div>
+</section>
+
+<!--  CARRINHO  -->
+<section id="carrinho" class="pagina" hidden>
+  <div class="faixa padrao-verde"><h1>Carrinho de compras</h1><p>Confira os pratos escolhidos antes de finalizar seu pedido.</p></div>
+  <div class="carrinho-grade">
+    <div>
+      <h3 class="subtitulo" id="titulo-carrinho">Seu pedido</h3>
+      <div id="itens-carrinho"></div>
+      <label class="pequeno">Observações para a cozinha</label>
+      <input placeholder="Ex.: enviar talheres, retirar algum ingrediente...">
+      <p><button class="btn-claro" data-page="produtos">Continuar comprando</button></p>
+    </div>
+    <aside class="resumo">
+      <h3 class="subtitulo">Resumo do pedido</h3>
+      <div class="linha-entre pequeno"><span>Subtotal</span><span id="r-sub">R$ 0,00</span></div>
+      <div class="linha-entre pequeno"><span>Entrega</span><span id="r-ent">R$ 0,00</span></div>
+      <div class="linha-entre pequeno"><span>Desconto</span><span id="r-desc">R$ 0,00</span></div>
+      <div class="linha-entre total"><span>Total</span><span id="r-total">R$ 0,00</span></div>
+      <label class="pequeno">Cupom de desconto</label>
+      <input id="cupom" placeholder="Digite seu cupom">
+      <button class="btn-claro largo" id="btn-cupom">Aplicar cupom</button>
+      <p id="cupom-msg" class="pequeno"></p>
+      <h3 class="subtitulo">Endereço de entrega</h3>
+      <p class="pequeno">Rua dos Timbiras, 1200, ap. 302<br>Lourdes, Belo Horizonte — MG<br>CEP 30140-060</p>
+      <a class="link pequeno" data-page="perfil">Alterar endereço</a>
+      <p class="pequeno">Entrega estimada 40–55 minutos após a confirmação.</p>
+      <label class="pequeno">Forma de pagamento</label>
+      <select id="pagamento"><option>Pix</option><option>Cartão</option><option>Dinheiro</option></select>
+      <button class="btn largo" id="finalizar">Finalizar pedido</button>
+      <p id="final-msg" class="pequeno centro"></p>
+    </aside>
+  </div>
+</section>
+
+<!--  PERFIL  -->
+<section id="perfil" class="pagina" hidden>
+  <div class="faixa padrao-verde"><h1>Meu perfil</h1><p>Mantenha seus dados atualizados para receber cada pedido sem preocupações.</p></div>
+  <div class="perfil-grade">
+    <aside class="menu-perfil">
+      <b id="nome-perfil">Mariana Costa</b>
+      <a class="ativo">Dados pessoais</a><a>Endereço de entrega</a><a>Alterar senha</a>
+      <a data-page="pedidos">Pedidos feitos</a><a data-page="carrinho">Carrinho de compras</a><a id="sair">Sair da conta</a>
+    </aside>
+    <form class="formulario" onsubmit="return false">
+      <h3 class="subtitulo">Dados pessoais</h3>
+      <div class="grade2">
+        <div class="full"><label>Nome completo *</label><input value="Mariana Costa"></div>
+        <div><label>E-mail *</label><input value="mariana.costa@email.com"></div>
+        <div><label>Telefone *</label><input value="(31) 99999-1234"></div>
+        <div><label>CPF *</label><input value="•••.•••.•••-89"></div>
+        <div><label>Data de nascimento</label><input value="15/04/1995"></div>
+      </div>
+      <label class="check"><input type="checkbox" checked> Receber novidades e ofertas do Restaurante Djinn</label>
+      <h3 class="subtitulo">Endereço de entrega</h3>
+      <div class="grade2">
+        <div><label>CEP *</label><input value="30140-060"></div>
+        <div><label>Bairro *</label><input value="Lourdes"></div>
+        <div><label>Rua / Avenida *</label><input value="Rua dos Timbiras"></div>
+        <div><label>Número *</label><input value="1200"></div>
+        <div><label>Complemento</label><input value="Apartamento 302"></div>
+        <div><label>Ponto de referência</label><input value="Portaria na entrada principal"></div>
+        <div><label>Cidade *</label><input value="Belo Horizonte"></div>
+        <div><label>Estado *</label><select><option>Minas Gerais — MG</option></select></div>
+      </div>
+      <label class="check"><input type="checkbox" checked> Usar este endereço como padrão para minhas entregas</label>
+      <p class="direita"><button class="btn">Salvar alterações</button></p>
+      <h3 class="subtitulo">Alterar senha</h3>
+      <label>Senha atual</label><input type="password" placeholder="Digite sua senha atual">
+      <div class="grade2">
+        <div><label>Nova senha</label><input type="password" placeholder="Crie uma nova senha"></div>
+        <div><label>Confirmar nova senha</label><input type="password" placeholder="Repita sua nova senha"></div>
+      </div>
+      <p class="pequeno">Use pelo menos 8 caracteres, incluindo letras e números.</p>
+      <p class="direita"><button class="btn">Alterar senha</button></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!--  POP-UP DE PEDIDO REALIZADO (lampada + genio) esse ficou legal demaiss  -->
+<div id="popup-pedido" class="pm" hidden role="dialog" aria-modal="true" aria-labelledby="popup-titulo">
+  <button class="pm-x" data-fechar aria-label="Fechar">×</button>
+
+  <div class="pm-genio">
+<svg class="genio-desenho" viewBox="0 0 340 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gênio do Djinn">
+  <defs>
+    <radialGradient id="gPele" cx="45%" cy="35%" r="75%"><stop offset="0" stop-color="#58bd86"/><stop offset="1" stop-color="#2a7e54"/></radialGradient>
+    <linearGradient id="gCauda" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2d8559"/><stop offset=".7" stop-color="#236a47"/><stop offset="1" stop-color="#236a47" stop-opacity="0"/></linearGradient>
+    <linearGradient id="gOuro" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6df8d"/><stop offset=".55" stop-color="#d9b73e"/><stop offset="1" stop-color="#a8832a"/></linearGradient>
+  </defs>
+  <g stroke="#0c2a1a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <!-- cauda de fumaca -->
+    <path fill="url(#gCauda)" d="M132 250C112 292 150 312 164 344C178 374 128 386 150 440L196 440C206 390 222 376 204 342C190 312 230 290 210 250Z"/>
+    <!-- braco esquerdo (sinal de "ok") -->
+    <path fill="none" stroke="#0c2a1a" stroke-width="24" d="M128 160C104 170 88 190 90 214C88 190 76 168 68 148"/>
+    <path fill="none" stroke="#2f8a5c" stroke-width="18" d="M128 160C104 170 88 190 90 214C88 190 76 168 68 148"/>
+    <!-- cardapio segurado pela mao esquerda -->
+    <g transform="rotate(-10 57 115)">
+      <rect x="30" y="74" width="54" height="72" rx="4" fill="#f8f1d8" stroke="#a8832a" stroke-width="3"/>
+      <rect x="35" y="79" width="44" height="62" rx="2" fill="none" stroke="#d9b73e" stroke-width="1.5"/>
+      <text x="57" y="96" text-anchor="middle" font-family="Almendra,serif" font-weight="700" font-size="10.5" fill="#173f2a" stroke="none">Cardápio</text>
+      <path fill="none" stroke="#9aa58f" stroke-width="2" d="M42 104h30M42 111h30M42 118h30M42 125h22"/>
+      <path fill="none" stroke="#d9b73e" stroke-width="2.5" d="M51 133h12"/>
+    </g>
+    <!-- mao agarrando o cardapio -->
+    <circle cx="66" cy="148" r="13" fill="#3a9a68"/>
+    <ellipse cx="77" cy="138" rx="5" ry="9" fill="#3a9a68" transform="rotate(-25 77 138)"/>
+    <path fill="none" stroke-width="2" d="M57 146h18M58 152h16"/>
+    <!-- tronco -->
+    <path fill="url(#gPele)" d="M120 152C132 138 152 134 170 134C188 134 208 138 220 152L214 246C202 264 138 264 126 246Z"/>
+    <path fill="none" stroke="url(#gOuro)" stroke-width="5" d="M140 140L170 204L200 140"/>
+    <!-- faixa da cintura -->
+    <path fill="url(#gOuro)" d="M127 238C150 252 190 252 213 238L211 258C190 272 150 272 129 258Z"/>
+    <!-- braco direito (bandeja) -->
+    <path fill="none" stroke="#0c2a1a" stroke-width="24" d="M212 160C238 170 252 190 250 214C252 190 262 172 270 154"/>
+    <path fill="none" stroke="#2f8a5c" stroke-width="18" d="M212 160C238 170 252 190 250 214C252 190 262 172 270 154"/>
+    <circle cx="270" cy="150" r="12" fill="#3a9a68"/>
+    <!-- bandeja e cloche -->
+    <ellipse cx="270" cy="136" rx="52" ry="6" fill="#e8cf74"/>
+    <path fill="url(#gOuro)" d="M226 134C226 100 314 100 314 134Z"/>
+    <path fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="3" d="M236 124C240 112 252 106 262 105"/>
+    <circle cx="270" cy="103" r="5" fill="url(#gOuro)"/>
+    <text x="270" y="128" text-anchor="middle" font-family="Almendra,serif" font-weight="700" font-size="17" fill="#173f2a" stroke="none">Djinn</text>
+    <!-- rabo de cavalo -->
+    <path fill="#0c2a1a" d="M170 70C178 46 150 28 126 40C116 45 114 56 122 60C130 54 146 54 158 68Z"/>
+    <ellipse cx="168" cy="72" rx="9" ry="5" fill="url(#gOuro)" transform="rotate(-20 168 72)"/>
+    <!-- cabeca -->
+    <ellipse cx="140" cy="104" rx="7" ry="9" fill="#3a9a68"/>
+    <ellipse cx="200" cy="104" rx="7" ry="9" fill="#3a9a68"/>
+    <circle cx="138" cy="116" r="3" fill="url(#gOuro)" stroke-width="1.5"/>
+    <ellipse cx="170" cy="100" rx="31" ry="37" fill="url(#gPele)"/>
+    <path fill="#0c2a1a" d="M139 94C139 66 201 66 201 94C190 80 150 80 139 94Z"/>
+    <!-- rosto -->
+    <path fill="none" stroke-width="3.5" d="M154 99Q161 91 168 99M174 99Q181 91 188 99"/>
+    <path fill="none" stroke-width="4" d="M152 88Q160 83 168 87M174 87Q182 83 190 88"/>
+    <path fill="none" stroke-width="2.5" d="M170 102Q166 110 171 112"/>
+    <ellipse class="boca" cx="170" cy="126" rx="7" ry="4" fill="#6b2323" stroke-width="2"/>
+    <path fill="#0c2a1a" stroke-width="1.5" d="M148 118C158 111 167 113 170 118C173 113 182 111 192 118C184 125 174 122 170 120C166 122 156 125 148 118Z"/>
+    <path fill="#0c2a1a" stroke-width="1.5" d="M160 128Q170 166 180 128Q170 136 160 128Z"/>
+  </g>
+</svg>
+  </div>
+  <div id="popup-lampada" class="pm-lampada"></div>
+
+  <div class="pm-fumaca" aria-hidden="true">
+      <i style="--s:150px;--d:2.2s;--x:-30px;--y:170px"></i>
+      <i style="--s:190px;--d:2.35s;--x:40px;--y:210px"></i>
+      <i style="--s:130px;--d:2.5s;--x:-70px;--y:140px"></i>
+      <i style="--s:210px;--d:2.6s;--x:10px;--y:250px"></i>
+      <i style="--s:160px;--d:2.8s;--x:70px;--y:180px"></i>
+      <i style="--s:180px;--d:3.0s;--x:-50px;--y:230px"></i>
+      <i style="--s:140px;--d:3.2s;--x:30px;--y:280px"></i>
+      <i style="--s:170px;--d:3.4s;--x:-10px;--y:300px"></i>
+      <i class="fixa" style="--s:170px;--d:3.0s;--x:-55px"></i>
+      <i class="fixa" style="--s:210px;--d:3.2s;--x:0px"></i>
+      <i class="fixa" style="--s:170px;--d:3.4s;--x:55px"></i>
+  </div>
+
+  <div class="pm-balao">
+    <h2 id="popup-titulo">Seu pedido foi realizado!</h2>
+    <p id="popup-num"></p>
+    <div class="pm-botoes">
+      <button class="btn" data-page="pedidos" data-fechar>Ver meus pedidos</button>
+      <button class="btn-claro" data-fechar>Continuar</button>
+    </div>
+  </div>
+</div>
+
+<!-- RODAPE -->
+<footer class="padrao-ouro">
+  <div class="rodape-logo"><img src="img/genio.png" alt="Gênio Djinn"><span>Restaurante arabe</span></div>
+  <div>
+    <h4>Informacoes</h4>
+    <p><img src="img/telefone.png" alt="" class="mini"> (31)3262-1600</p>
+    <p>contato@djinn.com.br</p>
+    <p><a class="sublinhado">Politica de privacidade</a></p>
+  </div>
+  <div>
+    <h4 class="normal">Endereco:</h4>
+    <p>R. Matias Cardoso, 345 - Santo Agostinho, Belo Horizonte - MG, 30170-050</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
